@@ -1,0 +1,35 @@
+* {
+    font-family: Verdana, Geneva, Tahoma;
+    color: #dfdfdf;
+    background-color: #292a2c;
+}
+
+body {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+h1 {
+    font-size: 1.4rem;
+}
+
+.cyan {
+    color: #80bbf3;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+li {
+    font-size: 0.9rem;
+    background-color: transparent;
+}
+
+.spec-heading {
+    margin-bottom: 0.6rem;
+}
+
+.specs {
+    line-height: 1.5;
+}
