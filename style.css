@@ -1,0 +1,22 @@
+* {
+    background-color: #FFFDFE
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    font-family: 'Roboto Slab', serif
+}
+tbody{
+    font-family: 'Roboto Slab', serif
+}
+th {
+    font-weight: 700
+}
+a {
+    text-decoration: none;
+    text-decoration-color: antiquewhite
+}
