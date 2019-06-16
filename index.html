@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Snake by Dion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/styles.css" type="text/css" rel="stylesheet">
+    <script src="./js/test.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-menu-container">
+        <div class="center">
+            <a href="index.html">
+                <img class='logo' src='./img/logo.png' alt="logo.png">
+            </a>
+            <input type="text" id="nameInput" name='nameInput' placeholder="Your Name" required>
+            <!-- <button onclick="hide()">hide title</button> -->
+            <div class="difficulty">
+                <a class="button" id="easy" onclick='save(150)'>Easy</a>
+                <a class="button" id="medium" onclick='save(100)'>Medium</a>
+                <a class="button" id="hard" onclick='save(50)'>Hard</a>
+            </div>
+            <div class="leaderboard">
+                <a id="leaderboard-button" href="leaderboard.html">Leaderboard</a>
+            </div>
+            <div class="profile">
+                <a>&copy; dion michael 2019</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAG2Nkw1fKuEiNiY8S6jDKlD1u0e4w_Kyo",
+            authDomain: "snakebydion.firebaseapp.com",
+            databaseURL: "https://snakebydion.firebaseio.com",
+            projectId: "snakebydion",
+            storageBucket: "snakebydion.appspot.com",
+            messagingSenderId: "141339562216"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+        function save(speed) {
+            var name = document.getElementById('nameInput').value
+            if (!name || name === "") {
+                return displayError()
+            } else {
+                localStorage.setItem("name", name)
+                localStorage.setItem("speed", speed)
+                window.location.replace("snake.html")
+            }
+        }
+
+        function displayError() {
+            var msg = 'Please input your name'
+            alert(msg)
+            window.location.reload
+        }
+    </script>
+    <script>
+        var ref = firebase.database().ref();
+        var obj = {}
+        ref.on("value", function (snapshot) {
+                console.log(snapshot.val());
+                var keys = Object.keys(snapshot.val())
+                for (var x = 0; x < keys.length; x++) {
+                    console.log(keys[x] + snapshot.val()[keys[x]])
+                }
+            },
+            function (error) {
+                console.log("Error: " + error.code);
+            });
+        console.log(Object.keys(obj))
+    </script>
+</body>
+
+</html>

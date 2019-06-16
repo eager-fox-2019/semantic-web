@@ -1,0 +1,69 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Snake by Dion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/styles.css" type="text/css" rel="stylesheet">
+    <script src="./js/leaderboard.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"> 
+</head>
+<body> 
+    <div class="leaderboard-container">
+        <div class="center">
+            <a href="index.html">
+                <img class='logo' src='./img/logo.png'>
+            </a>
+            <h2>LEADERBOARD</h2>
+            <div id="leaderboard-list">
+                <!-- diisi from firebase -->
+            </div>
+            <div class="button-return">
+                <a href="index.html">RETURN</a>
+            </div>
+            <div class="footer">
+                <img class="firebase" src="./img/firebase.png">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAG2Nkw1fKuEiNiY8S6jDKlD1u0e4w_Kyo",
+        authDomain: "snakebydion.firebaseapp.com",
+        databaseURL: "https://snakebydion.firebaseio.com",
+        projectId: "snakebydion",
+        storageBucket: "snakebydion.appspot.com",
+        messagingSenderId: "141339562216"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script>
+        var ref = firebase.database().ref()
+        var obj = {}
+        var listDiv = document.getElementById('leaderboard-list')
+        var ol = document.createElement('ol')
+        listDiv.appendChild(ol)
+        ref.orderByValue().on("value", function(snapshot) {
+            // console.log(snapshot.val());
+            var filtered = []
+            snapshot.forEach(function(data){
+                filtered.push(data)
+            })
+            var reversed = filtered.reverse()
+            console.log(reversed)
+            reversed.slice(0, 10).forEach(function(value){
+                var li = document.createElement('li')
+                li.innerHTML = value.key + ' - ' + value.val()
+                ol.appendChild(li)
+                console.log(value.key + ' - ' + value.val())
+            })            
+        }, 
+        function (error) {
+            console.log("Error: " + error.code);
+        });
+    </script>
+</body>
+</html>
