@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Final Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    #lingkaran1 {
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      background: lightcoral;
+      border-radius: 100%;
+      margin: 20px;
+      margin-left: 350px;
+
+      float: left;
+    }
+
+    #lingkaran2 {
+      width: 100px;
+      height: 100px;
+      background: lightslategrey;
+      border-radius: 100%;
+      float: left;
+      margin: 20px
+    }
+
+    #lingkaran3 {
+      width: 100px;
+      height: 100px;
+      background: lightseagreen;
+      border-radius: 100%;
+      float: left;
+      margin: 20px
+    }
+
+    #lingkaran4 {
+      width: 100px;
+      height: 100px;
+      background: lightgreen;
+      border-radius: 100%;
+      float: left;
+      margin: 20px
+    }
+
+    #lingkaran5 {
+      width: 100px;
+      height: 100px;
+      background: lightblue;
+      border-radius: 100%;
+      float: left;
+      margin: 20px
+    }
+
+    #lingkaran1:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    #lingkaran2:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    #lingkaran3:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    #lingkaran4:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    #lingkaran5:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Play With Colours</h1>
+  <div id="lingkaran1"></div>
+  <div id="lingkaran2"></div>
+  <div id="lingkaran3"></div>
+  <div id="lingkaran4"></div>
+  <div id="lingkaran5"></div>
+  <script>
+    var tUbahWarna = document.getElementById('lingkaran1')
+    tUbahWarna.onclick = function () {
+      document.body.style.backgroundColor = 'lightcoral'
+    }
+    var tUbahWarna = document.getElementById('lingkaran2')
+    tUbahWarna.onclick = function () {
+      document.body.style.backgroundColor = 'lightslategrey'
+    }
+    var tUbahWarna = document.getElementById('lingkaran3')
+    tUbahWarna.onclick = function () {
+      document.body.style.backgroundColor = 'lightseagreen'
+    }
+    var tUbahWarna = document.getElementById('lingkaran4')
+    tUbahWarna.onclick = function () {
+      document.body.style.backgroundColor = 'lightgreen'
+    }
+    var tUbahWarna = document.getElementById('lingkaran5')
+    tUbahWarna.onclick = function () {
+      document.body.style.backgroundColor = 'lightblue'
+    }
+  </script>
+</body>
+
+</html>
