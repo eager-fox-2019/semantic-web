@@ -1,0 +1,280 @@
+body {
+  font: 1rem/1.5 Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  /* overflow was a new thang att, https://css-tricks.com/almanac/properties/o/overflow/ */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.button-1 {
+  height: 37px;
+  background: #e8491d;
+  border: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+}
+
+.dark {
+  background: #35424a;
+  padding: 15px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Header */
+header {
+  background-color: #35424a;
+  color: white;
+  min-height: 70px;
+  border-bottom: 3px solid #e8491d;
+  padding: 10px 0 10px 0;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header li {
+  list-style-type: none;
+  display: inline;
+  padding: 0 0 0 20px;
+}
+
+#branding {
+  float: left;
+  min-height: 73px;
+  line-height: 73px;
+}
+
+#branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  min-height: 73px;
+  line-height: 73px;
+}
+
+header .highlight,
+header .current a {
+  color: #e8491d;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #cccccc;
+}
+
+/* Showcase */
+#showcase {
+  min-height: 400px;
+  background: url('../imgs/showcase.jpg') no-repeat 0 -400px;
+  text-align: center;
+  color: white;
+}
+
+#showcase h1 {
+  font-size: 50px;
+}
+
+#showcase p {
+  font-size: 18px;
+}
+
+/* newsletter */
+#newsletter {
+  color: white;
+  background: #35424a;
+  min-height: 80px;
+}
+
+#newsletter h1 {
+  float: left;
+  margin: 0;
+  min-height: 80px;
+  line-height: 80px;
+}
+
+#newsletter form {
+  float: right;
+  min-height: 80px;
+  line-height: 80px;
+}
+
+#newsletter input[type="email"] {
+  padding: 4px;
+  height: 25px;
+  width: 250px;
+}
+
+/* boxes */
+
+#boxes {
+  margin-top: 20px;
+}
+
+#boxes .box {
+  float: left;
+  margin-right: 40px;
+  width: calc((100% - 80px)/3);
+  text-align: center;
+}
+
+#boxes .box:last-of-type {
+  margin-right: 0px;
+}
+
+#boxes .box img {
+  max-width: 120px;
+}
+
+/* sidebar */
+
+aside#sidebar {
+  float: right;
+  width: 30%;
+}
+
+/* main col */
+article#main-col {
+  float: left;
+  max-width: 65%;
+}
+
+#sidebar h3 {
+  margin: 0;
+}
+
+#sidebar p {
+  margin: 10px 0 0 0;
+}
+
+ul#services li {
+  list-style: none;
+  border: 1px solid #ccc;
+  background: #e6e6e6;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+#services h3 {
+  margin: 0;
+}
+
+aside#sidebar .dark div {
+  overflow: hidden;
+}
+
+aside#sidebar .quote input,
+aside#sidebar .quote textarea {
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#sidebar .dark {
+  padding: 30px;
+}
+
+/* footer */
+footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: #e8491d;
+  text-align: center;
+}
+
+/* media queries */
+@media(max-width: 900px) {
+  #branding,
+  header nav,
+  #newsletter h1,
+  #newsletter form {
+    float: none;
+    width: 100%;
+    text-align: center;
+    min-height: 40px;
+    line-height: 50px;
+  }
+
+  header li {
+    padding: 0;
+    margin-right: 20px;
+  }
+
+  header li:last-of-type {
+    margin-right: 0;
+  }
+
+  #showcase {
+    min-height: 300px;
+  }
+
+  #showcase h1 {
+    font-size: 40px;
+  }
+
+  #showcase p {
+    font-size: 15px;
+  }
+
+  #newsletter {
+    padding: 20px;
+  }
+
+  #newsletter h1 {
+    font-size: 20px;
+  }
+
+  #boxes .box {
+    float: none;
+    margin-right: 0px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  #boxes .box img {
+    min-width: 200px;
+  }
+
+  #main-col, #sidebar {
+    float: none;
+    min-width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+
+}
+
+/* @media(max-width: 600px) {
+  #boxes .box img {
+    min-width: 200px;
+  }
+} */
+
+
